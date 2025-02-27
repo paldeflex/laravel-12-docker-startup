@@ -9,6 +9,7 @@ This is a **Docker-based template** for **Laravel 12**, built with:
 - **Makefile for easy commands (like Laravel Sail)**
 - **Nginx**
 - **Composer**
+- **XDebug in Dev Mode**
 
 And useful **libraries**:
 - **[Telescope](https://laravel.com/docs/12.x/telescope)**
