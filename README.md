@@ -29,6 +29,9 @@ cd laravel-12-docker
 ```sh
 cp .env.example .env
 ```
+```yaml
+DB_DATABASE=<your-db> # Change DB name
+```
 - Change the container name prefix:
 
   Inside `docker-compose.yml`, rename `l12-` to your project name:
