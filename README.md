@@ -29,6 +29,7 @@ cd laravel-12-docker
 ```sh
 cp .env.example .env
 ```
+Open `.env` file and change it:
 ```yaml
 DB_DATABASE=<your-db> # Change DB name
 ```
