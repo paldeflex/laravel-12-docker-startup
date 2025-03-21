@@ -12,7 +12,7 @@ POSTGRES_DB=$(shell grep DB_DATABASE .env | cut -d '=' -f2)
 POSTGRES_USER=$(shell grep DB_USERNAME .env | cut -d '=' -f2)
 POSTGRES_PASSWORD=$(shell grep DB_PASSWORD .env | cut -d '=' -f2)
 
-.PHONY: help up prod stop down restart restart-container stop-container artisan composer npm logs bash psql redis
+.PHONY: help up prod stop down restart restart-container stop-container artisan composer npm logs bash psql redis test
 
 ## 📜 Display all available commands
 help:
@@ -32,6 +32,9 @@ help:
 	@echo ""
 	@echo "🎭  Artisan commands:"
 	@echo "  make artisan <cmd>  - Run 'php artisan <cmd>' inside the app container"
+	@echo ""
+	@echo "👀  PHPUnit:"
+	@echo "  make test  - Run PHPUnit tests"
 	@echo ""
 	@echo "🎼  Composer commands:"
 	@echo "  make composer <cmd> - Run 'composer <cmd>' inside the app container"
@@ -111,6 +114,10 @@ psql:
 ## 🔥 Open Redis CLI inside the Redis container
 redis:
 	docker-compose exec $(REDIS_CONTAINER) redis-cli
+
+## 🧪 Run PHPUnit tests
+test:
+	docker-compose exec -u www-data $(APP_CONTAINER) php artisan test
 
 ## Fix for make to avoid creating unnecessary files
 %:
