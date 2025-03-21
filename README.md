@@ -118,6 +118,7 @@ make artisan storage:link
 | View Logs           | `docker-compose logs -f app`                                               | `make logs app`       | 
 | Open PostgreSQL CLI | `docker-compose exec -e PGPASSWORD=<pass> postgres psql -U <user> -d <db>` | `make psql`           | 
 | Open Redis CLI      | `docker-compose exec redis redis-cli`                                      | `make redis`          | 
+| Run Tests           | `docker-compose exec -u www-data app php artisan test`                     | `make test`           | 
 
 ---
 
