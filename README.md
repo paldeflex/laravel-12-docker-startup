@@ -137,6 +137,38 @@ For list of **all makefile commands**, run `make help`.
 
 ---
 
+# **💡 PHPStorm Setup**
+
+## PHP Interpreter
+
+![image](https://github.com/user-attachments/assets/c19edc0a-e5ce-4905-8324-be4c7adbdbc1)
+![image](https://github.com/user-attachments/assets/53cdc2a1-c878-4818-b0c2-ed04afb18c61) or ![image](https://github.com/user-attachments/assets/2c59cadb-b74e-4e53-9fc7-e759016dd9d7)
+![image](https://github.com/user-attachments/assets/804cbdc4-058c-4e04-ad8c-a8304b090a8e)
+![image](https://github.com/user-attachments/assets/bfd327e3-06f3-4f3c-9475-45bb58392cf1)
+
+## If you use Laravel IDEA
+
+![image](https://github.com/user-attachments/assets/50c0f082-58d4-496d-8439-5b549e04e056)
+
+## XDebug
+
+![image](https://github.com/user-attachments/assets/d14ff2fb-359c-4a5e-8739-be4a63ecfe9b)
+![image](https://github.com/user-attachments/assets/718cde26-37ac-42e4-91b7-319b6402a6e3)
+![image](https://github.com/user-attachments/assets/2469193b-cd63-4f43-99fb-04616c3dbd8d)
+
+---
+
+# **🧪 Run Tests**
+```shell
+make test
+```
+or, 
+```shell
+docker-compose exec -u www-data app php artisan test
+```
+
+---
+
 ## 📜 Additional Notes
 - This setup **supports Laravel Queues & Scheduler** via **Supervisor**. 
 - **PostgreSQL, Redis & Supervisor** are configured out of the box.
@@ -149,6 +181,7 @@ For list of **all makefile commands**, run `make help`.
 Use **Makefile** commands just like **Laravel Sail**, and enjoy seamless **Docker development**! 🚀
 
 ---
+
 
 ## 🤖 Authors
 - [**m1n64**](https://github.com/m1n64)
