@@ -22,7 +22,7 @@ And useful **libraries**:
 ## **🛠 Setup Instructions**
 ### 1️⃣ Clone the Repository
 ```sh
-composer create-project m1n64/laravel-12-docker-startup laravel-12-docker
+git clone git@github.com:paldeflex/laravel-12-docker-startup.git
 cd laravel-12-docker
 ```
 ### 2️⃣ Copy `.env` and Update Configuration
