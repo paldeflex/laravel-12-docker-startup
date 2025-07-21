@@ -35,7 +35,7 @@ DB_DATABASE=<your-db> # Change DB name
 ```
 - Change the container name prefix:
 
-  Inside `docker-compose.yml`, rename `l12-` to your project name:
+  Inside `compose.yml`, rename `l12-` to your project name:
 ```yaml
 services:
     app:
@@ -49,7 +49,7 @@ services:
 ```
 - Change the Docker network
 
-  In `docker-compose.yml`:
+  In `compose.yml`:
 ```yaml
 networks:
    myproject-network:
@@ -60,7 +60,7 @@ networks:
 ## 🚀 Start Containers
 ### 🔹 Using Docker
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 ### 🔹 Using Makefile
 ```sh
@@ -75,7 +75,7 @@ make prod  # For production
 
 Run inside the container:
 ```sh
-docker-compose exec -u www-data app composer install
+docker compose exec -u www-data app composer install
 ```
 
 Or using Makefile:
@@ -111,14 +111,14 @@ make artisan storage:link
 
 | Action              | Docker Command                                                             | Makefile Shortcut     |
 |---------------------|----------------------------------------------------------------------------|-----------------------|
-| Run `php artisan`   | `docker-compose exec -u www-data app php artisan <cmd>`                    | `make artisan <cmd>`  |
-| Run `composer`      | `docker-compose exec -u www-data app composer <cmd>`                       | `make composer <cmd>` |
-| Run `npm`           | `docker-compose exec -u www-data app npm <cmd>`                            | `make npm <cmd>`      |
-| Open Bash           | `docker-compose exec -u www-data app bash`                                 | `make bash`           | 
-| View Logs           | `docker-compose logs -f app`                                               | `make logs app`       | 
-| Open PostgreSQL CLI | `docker-compose exec -e PGPASSWORD=<pass> postgres psql -U <user> -d <db>` | `make psql`           | 
-| Open Redis CLI      | `docker-compose exec redis redis-cli`                                      | `make redis`          | 
-| Run Tests           | `docker-compose exec -u www-data app php artisan test`                     | `make test`           | 
+| Run `php artisan`   | `docker compose exec -u www-data app php artisan <cmd>`                    | `make artisan <cmd>`  |
+| Run `composer`      | `docker compose exec -u www-data app composer <cmd>`                       | `make composer <cmd>` |
+| Run `npm`           | `docker compose exec -u www-data app npm <cmd>`                            | `make npm <cmd>`      |
+| Open Bash           | `docker compose exec -u www-data app bash`                                 | `make bash`           | 
+| View Logs           | `docker compose logs -f app`                                               | `make logs app`       | 
+| Open PostgreSQL CLI | `docker compose exec -e PGPASSWORD=<pass> postgres psql -U <user> -d <db>` | `make psql`           | 
+| Open Redis CLI      | `docker compose exec redis redis-cli`                                      | `make redis`          | 
+| Run Tests           | `docker compose exec -u www-data app php artisan test`                     | `make test`           | 
 
 ---
 
@@ -126,12 +126,12 @@ make artisan storage:link
 ### 🔄 Restart & Stop
 | Action      | Docker Command                     | Makefile Shortcut                         |
 |-------------|------------------------------------|-------------------------------------------|
-| Restart all | `docker-compose restart`           | `make restart`                            |
-| Restart one | `docker-compose restart <service>` | `make restart-container CONTAINER=<name>` | 
-| Stop all    | `docker-compose stop`              | `make stop`                               |
-| Stop one    | `docker-compose stop <service>`    | `make stop-container CONTAINER=<name>`    |
-| Start all   | `docker-compose up -d`             | `make up`                                 |
-| Remove all  | `docker-compose down -v`           | `make down`                               |
+| Restart all | `docker compose restart`           | `make restart`                            |
+| Restart one | `docker compose restart <service>` | `make restart-container CONTAINER=<name>` | 
+| Stop all    | `docker compose stop`              | `make stop`                               |
+| Stop one    | `docker compose stop <service>`    | `make stop-container CONTAINER=<name>`    |
+| Start all   | `docker compose up -d`             | `make up`                                 |
+| Remove all  | `docker compose down -v`           | `make down`                               |
 
 
 For list of **all makefile commands**, run `make help`. 
@@ -165,7 +165,7 @@ make test
 ```
 or, 
 ```shell
-docker-compose exec -u www-data app php artisan test
+docker compose exec -u www-data app php artisan test
 ```
 
 ---
