@@ -43,9 +43,7 @@ services:
             POSTGRES_USER: ${DB_USERNAME}
             POSTGRES_PASSWORD: ${DB_PASSWORD}
         volumes:
-            - pg_data:/var/lib/postgresql/data
-        ports:
-          - "5432:5432"
+            - pg_data:/var/lib/postgresql/data        
         networks:
             - laravel-12-network
 
