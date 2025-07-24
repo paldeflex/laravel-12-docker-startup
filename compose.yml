@@ -19,9 +19,7 @@ services:
       - redis
     networks:
       - laravel-12-network
-    extra_hosts:
-      - host.docker.internal:host-gateway
-  
+
   nginx:
     image: nginx:alpine
     container_name: l12-nginx
@@ -35,7 +33,7 @@ services:
       - app
     networks:
       - laravel-12-network
-  
+
   postgres:
     image: postgres:16-alpine
     container_name: l12-postgres
@@ -48,7 +46,7 @@ services:
       - pg_data:/var/lib/postgresql/data
     networks:
       - laravel-12-network
-  
+
   redis:
     image: redis:alpine
     container_name: l12-redis
@@ -64,7 +62,5 @@ volumes:
 
 networks:
   laravel-12-network:
+    name: laravel-12-network
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.28.0.0/16
