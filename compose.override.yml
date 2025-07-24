@@ -1,20 +1,28 @@
 services:
-    app:
-        build:
-          target: dev
-        environment:
-          PHP_IDE_CONFIG: "serverName=stage"
-        restart: unless-stopped
+  app:
+    build:
+      target: dev
+    environment:
+      PHP_IDE_CONFIG: "serverName=stage"
+    restart: unless-stopped
+    extra_hosts:
+      - host.docker.internal:host-gateway
 
-    nginx:
-        restart: unless-stopped
+  nginx:
+    restart: unless-stopped
 
-    postgres:
-        restart: unless-stopped
-        ports:
-          - "5432:5432"
+  postgres:
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
 
-    redis:
-        restart: unless-stopped
-        ports:
-          - "6379:6379"
+  redis:
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+networks:
+  laravel-12-network:
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
